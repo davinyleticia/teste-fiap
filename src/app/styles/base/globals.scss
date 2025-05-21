@@ -1,0 +1,41 @@
+@import '../base/variables';
+@import '../base/mixins';
+
+// :root {
+//   @include theme-vars($background-light, $foreground-light);
+// }
+
+@media (prefers-color-scheme: dark) {
+//   :root {
+//     @include theme-vars($background-dark, $foreground-dark);
+//   }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--primary-color);
+  background: var(--background);
+  font-family: var(--font-stack), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  @include reset-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}

@@ -1,0 +1,11 @@
+@mixin theme-vars($bg, $fg) {
+  --background: #{$bg};
+  --foreground: #{$fg};
+}
+
+
+@mixin reset-box {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
