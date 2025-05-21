@@ -1,0 +1,45 @@
+@use '../../../app/styles/base/variables.scss' as *;
+
+.header {
+position: fixed;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 !important;
+
+  .logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $background-color-secondary;
+    width: 100%;
+    padding: 1.4em 0;
+  }
+
+  .logo {
+    height: auto;
+  }
+
+  .progressBar {
+    height: 4px;
+    background-color: $primary-color;
+    transition: width 0.2s ease;
+    align-self: flex-start;
+  }
+}
+
+@media (min-width: map-get($breakpoints, 'tablet')) {
+  .header {
+    padding: $spacing-md 0;
+
+    .logo {
+      width: 100px;
+    }
+
+    .progressBar {
+      height: 6px;
+    }
+  }
+}
