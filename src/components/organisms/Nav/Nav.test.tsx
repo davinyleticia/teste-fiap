@@ -1,15 +1,15 @@
 import { render, act } from "@testing-library/react";
 import '@testing-library/jest-dom';
-import Header from "./Header";
+import Nav from "./Nav";
 
-jest.mock("../../molecules/HeaderView/HeaderView", () => ({
+jest.mock("../../molecules/NavView/NavView", () => ({
   __esModule: true,
   default: ({ scrollProgress }: { scrollProgress: number }) => (
     <div data-testid="header-view">{scrollProgress}</div>
   ),
 }));
 
-describe("Header organism", () => {
+describe("Nav organism", () => {
   beforeEach(() => {
     Object.defineProperty(document.documentElement, "scrollHeight", {
       configurable: true,
@@ -22,14 +22,14 @@ describe("Header organism", () => {
   });
 
   it("Atualiza scrollProgress na rolagem", () => {
-    const { getByTestId } = render(<Header />);
+    const { getByTestId } = render(<Nav />);
 
     act(() => {
       window.scrollY = 500;
       window.dispatchEvent(new Event("scroll"));
     });
 
-    const headerView = getByTestId("header-view");
-    expect(headerView.textContent).toBe("50");
+    const NavView = getByTestId("header-view");
+    expect(NavView.textContent).toBe("50");
   });
 });

@@ -1,6 +1,6 @@
 import { Montserrat } from "next/font/google";
 import './styles/app.scss';
-import Header from "@/components/organisms/Header/Header";
+import { Nav } from "@/components/organisms/";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={montserrat.variable}>
-        <Header/>
+        <Nav/>
         {children}
       </body>
     </html>

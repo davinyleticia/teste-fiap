@@ -1,13 +1,13 @@
-import styles from './HeaderView.module.scss';
+import styles from './NavView.module.scss';
 import Image from 'next/image';
 
-interface HeaderViewProps {
+interface NavViewProps {
   scrollProgress: number;
 }
 
-export default function HeaderView({ scrollProgress }: HeaderViewProps) {
+export default function NavView({ scrollProgress }: NavViewProps) {
   return (
-    <header className={styles.header}>
+    <nav className={styles.Nav}>
       <div className={styles.logoContainer}>
         <Image
           src="/logo-fiap.svg"
@@ -23,6 +23,6 @@ export default function HeaderView({ scrollProgress }: HeaderViewProps) {
           style={{ width: `${scrollProgress}%` }}
         />
 
-    </header>
+    </nav>
   );
 }

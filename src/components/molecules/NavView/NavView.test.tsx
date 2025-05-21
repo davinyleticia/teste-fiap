@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import HeaderView from './HeaderView';
+import HeaderView from './NavView';
 
 jest.mock('next/image', () => ({
   __esModule: true,

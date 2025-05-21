@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import HeaderView from "../../molecules/HeaderView/HeaderView";
+import { NavView } from "../../molecules/";
 
-export default function Header() {
+export default function Nav() {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
@@ -18,5 +18,5 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return <HeaderView scrollProgress={scrollProgress} />;
+  return <NavView scrollProgress={scrollProgress} />;
 }
