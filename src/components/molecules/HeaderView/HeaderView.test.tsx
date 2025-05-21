@@ -1,4 +1,3 @@
-// components/molecules/HeaderView/HeaderView.test.tsx
 import { render, screen } from '@testing-library/react';
 import HeaderView from './HeaderView';
 

@@ -1,4 +1,3 @@
-// components/organisms/Header/Header.tsx
 "use client";
 
 import { useEffect, useState } from "react";

@@ -1,9 +1,7 @@
-// components/organisms/Header/Header.test.tsx
 import { render, act } from "@testing-library/react";
 import '@testing-library/jest-dom';
 import Header from "./Header";
 
-// Mock HeaderView
 jest.mock("../../molecules/HeaderView/HeaderView", () => ({
   __esModule: true,
   default: ({ scrollProgress }: { scrollProgress: number }) => (
@@ -13,7 +11,6 @@ jest.mock("../../molecules/HeaderView/HeaderView", () => ({
 
 describe("Header organism", () => {
   beforeEach(() => {
-    // Simula um documento com altura definida
     Object.defineProperty(document.documentElement, "scrollHeight", {
       configurable: true,
       value: 2000,
@@ -24,16 +21,15 @@ describe("Header organism", () => {
     });
   });
 
-  it("updates scrollProgress on scroll", () => {
+  it("Atualiza scrollProgress na rolagem", () => {
     const { getByTestId } = render(<Header />);
 
-    // Simula o scroll
     act(() => {
       window.scrollY = 500;
       window.dispatchEvent(new Event("scroll"));
     });
 
     const headerView = getByTestId("header-view");
-    expect(headerView.textContent).toBe("50"); // 500/1000 = 50%
+    expect(headerView.textContent).toBe("50");
   });
 });
