@@ -1,14 +1,17 @@
 @import '../base/variables';
 @import '../base/mixins';
 
-// :root {
-//   @include theme-vars($background-light, $foreground-light);
-// }
+// Definindo variáveis CSS
+:root {
+  --primary-color: #ED145B;
+  --background-color: #000000;
+  --text-color: #FFFFFF;
+  --font-stack: 'Montserrat', sans-serif;
+}
 
-@media (prefers-color-scheme: dark) {
-//   :root {
-//     @include theme-vars($background-dark, $foreground-dark);
-//   }
+// Reset básico e tipografia
+* {
+  @include reset-box;
 }
 
 html,
@@ -18,24 +21,14 @@ body {
 }
 
 body {
-  color: var(--primary-color);
+  color: var(--text-color);
   background: var(--background-color);
   font-family: var(--font-stack), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  @include reset-box;
-}
-
 a {
   color: inherit;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }
