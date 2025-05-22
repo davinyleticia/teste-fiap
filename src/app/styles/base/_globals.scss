@@ -1,12 +1,32 @@
 @use './variables' as *;
 @use '../base/mixins' as *;
 
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham/Gotham-Regular.woff2') format('woff2'),
+       url('/fonts/Gotham/Gotham-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham/Gotham-Bold.woff2') format('woff2'),
+       url('/fonts/Gotham/Gotham-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 // Definindo variáveis CSS
 :root {
   --primary-color: #ed145b;
   --background-color: #000000;
   --text-color: #ffffff;
-  --font-stack: 'Montserrat', sans-serif;
+  --font-stack: 'Gotham', sans-serif;
 }
 
 // Reset básico e tipografia
@@ -20,6 +40,7 @@ body {
   overflow-x: hidden;
   margin: 0 auto;
   padding: 0;
+  font-family: 'Gotham', sans-serif;
 }
 
 body {
