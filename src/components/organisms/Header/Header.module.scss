@@ -1,0 +1,8 @@
+@use '../../../app/styles/base/variables.scss' as *;
+
+.container {
+    height: 50vh;
+  @media (min-width: map-get($breakpoints, 'hd-plus')) {
+  height: 100vh;
+  }
+}

@@ -1,0 +1,83 @@
+@use '../../../app/styles/base/variables.scss' as *;
+
+.content {
+  margin: 0 auto;
+  display: none;
+  @media (min-width: 1024px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-lg;
+    background: $background-color;
+    width: 80%;
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: $spacing-md;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    margin-bottom: 0;
+    margin-right: $spacing-lg;
+  }
+}
+
+.navButton {
+  font-family: $font-stack;
+  background: none;
+  border: none;
+  color: $text-color;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+
+   &.active {
+    color: $text-color;
+
+    // Borda no topo, apenas do tamanho do texto
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 30%;
+      transform: translateX(-50%);
+      width: 40%;
+      height: 3px;
+      background-color: $primary-color;
+      border-radius: 2px;
+    }
+  }
+
+  &:hover {
+    color: lighten($text-color, 10%);
+  }
+}
+
+.navButton p {
+  font-size: 1.1rem;
+  font-weight: 300;
+  padding: .6rem 0;
+}
+
+.courseList {
+  display: flex;
+  flex-direction: column;
+  color: $text-color;
+  width: 50%;
+  gap: $spacing-sm;
+}
+
+.name {
+  font-size: 4rem;
+  font-weight: 300;
+  color: $text-color;
+  padding: 2rem 0;
+  text-transform: capitalize;
+}

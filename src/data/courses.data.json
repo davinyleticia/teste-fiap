@@ -1,0 +1,18 @@
+{
+  "tecnologia": [
+    { "name": "Big Data Ecosystem", "tag": "REMOTO • LIVE" },
+    { "name": "Creating Dashboards for BI", "tag": "REMOTO • LIVE" },
+    { "name": "Big Data Science - Machine Learning & Data Mining", "tag": "REMOTO • LIVE • MULTIMÍDIA" },
+    { "name": "Storytelling", "tag": "REMOTO • LIVE" }
+  ],
+  "inovacao": [
+    { "name": "UX", "tag": "LIVE" },
+    { "name": "Design Thinking", "tag": "LIVE" },
+    { "name": "Trends", "tag": "LIVE" }
+  ],
+  "negocios": [
+    { "name": "Agile Culture", "tag": "LIVE" },
+    { "name": "ERP", "tag": "REMOTO" },
+    { "name": "Finance for Non-Financials", "tag": "LIVE" }
+  ]
+}

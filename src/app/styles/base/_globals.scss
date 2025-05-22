@@ -51,12 +51,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-section {
-    height: 50vh;
-  @media (min-width: map-get($breakpoints, 'hd-plus')) {
-  height: 100vh;
-  }
-}
+
 
 a {
   color: inherit;

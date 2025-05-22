@@ -4,6 +4,7 @@ import { animate } from 'motion';
 import { useEffect, useRef } from 'react';
 import { TitleBlock } from '@/components/molecules/';
 import { HeaderTitle, BackgroundTitle } from '@/components/atomic';
+import styles from './Header.module.scss';
 
 interface HeaderProps {
   data: {
@@ -85,8 +86,9 @@ export default function Header({ data }: HeaderProps) {
     secondLineRef,
   };
 
+
   return (
-    <section>
+    <section className={styles.container}>
       <TitleBlock propsData={propsData}>
         <BackgroundTitle>
           <p ref={propsData.backgroundTitleRef}>

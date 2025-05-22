@@ -1,0 +1,19 @@
+@use '../../../app/styles/base/variables.scss' as *;
+
+.container {
+  font-family: $font-stack;
+  font-size: $font-size-lg;
+  color: $text-color;
+}
+
+.mainTitle {
+  font-size: 6rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.subTitle {
+  color: $primary-color;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+}
