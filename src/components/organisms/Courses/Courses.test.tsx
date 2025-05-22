@@ -1,6 +1,19 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import Courses from './Courses';
 
+interface course {
+  name: string;
+  tag: string;
+}
+
+interface category {
+  tecnologia: course[];
+  inovacao: course[];
+  negocios: course[];
+}
+
+
+
 // Mock 
 jest.mock('@/components/atomic/', () => ({
   Title: ({ text }: any) => (
@@ -16,7 +29,7 @@ jest.mock('@/components/molecules/', () => ({
 }));
 
 describe('Courses', () => {
-  const mockData = {
+  const mockData : category = {
     tecnologia: [
       { name: 'Curso Tech 1', tag: 'tag1' },
       { name: 'Curso Tech 2', tag: 'tag2' },

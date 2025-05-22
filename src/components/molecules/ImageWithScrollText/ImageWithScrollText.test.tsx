@@ -1,6 +1,16 @@
 import { render, screen } from "@testing-library/react";
 import ImageWithScrollText from "./ImageWithScrollText";
 
+type Props = {
+  src: string;
+  alt: string;
+  scrollText: {
+    text: string;
+    text2: string;
+  }
+};
+
+
 // Mock
 jest.mock('@/components/atomic/', () => ({
   ParallaxText: ({ text }: any) => (
@@ -16,7 +26,7 @@ jest.mock('next/image', () => (props: any) => {
 });
 
 describe("ImageWithScrollText", () => {
-  const mockProps = {
+  const mockProps : Props = {
     src: "/example.jpg",
     alt: "Imagem de teste",
     scrollText: {

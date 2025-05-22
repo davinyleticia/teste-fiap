@@ -1,6 +1,18 @@
 import { render, screen } from "@testing-library/react";
 import Intro from "./Intro";
 
+export interface IntroProps {
+        scrollText: {
+            text: string;
+            text2: string;
+        }
+        img: string;
+        MarqueeText: {
+            text: string;
+            text2: string;
+        };
+}
+
 // Mock
 jest.mock("@/components/atomic", () => ({
   MarqueeText: ({ text }: any) => <div data-testid="marquee">{text.text} {text.text2}</div>,
@@ -17,7 +29,7 @@ jest.mock("@/components/molecules/", () => ({
 }));
 
 describe("Intro Component", () => {
-  const mockData = {
+  const mockData : IntroProps = {
     scrollText: {
       text: "Scroll text 1",
       text2: "Scroll text 2",

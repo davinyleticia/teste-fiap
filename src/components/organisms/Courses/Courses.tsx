@@ -21,8 +21,6 @@ export default function Courses({data}: {data: category}) {
     'tecnologia' | 'inovacao' | 'negocios'
   >('tecnologia');
 
-  const [hoveredTab, setHoveredTab] = useState<string | null>(null);
-
   return (
     <section>
       <div className={styles.wrapper}>

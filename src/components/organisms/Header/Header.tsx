@@ -49,8 +49,8 @@ export default function Header({ data }: HeaderProps) {
       animate(
         secondLineRef.current,
         {
-          opacity: [0, 1, 1, 0] as any,
-          y: [-50, 0, 0, 50] as any,
+          opacity: [0, 1, 1, 0] ,
+          y: [-50, 0, 0, 50] ,
         },
         {
           duration: 7,
@@ -65,7 +65,7 @@ export default function Header({ data }: HeaderProps) {
       animate(
         backgroundTitleRef.current,
         {
-          opacity: [0, 0.17, 0.17, 0] as any,
+          opacity: [0, 0.17, 0.17, 0],
         },
         {
           duration: 7,

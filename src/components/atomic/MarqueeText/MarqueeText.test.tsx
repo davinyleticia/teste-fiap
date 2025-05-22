@@ -1,6 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import MarqueeText from './MarqueeText';
 
+type Props = {
+    text: string;
+    text2: string;
+};
+
+
 // Mock 
 jest.mock('framer-motion', () => {
   const React = require('react');
@@ -12,7 +18,7 @@ jest.mock('framer-motion', () => {
 });
 
 describe("MarqueeText", () => {
-  const mockText = {
+  const mockText : Props = {
     text: "Texto principal",
     text2: "Texto reverso"
   };

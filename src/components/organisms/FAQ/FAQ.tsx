@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { CourseItem } from '@/components/molecules/';
 import { Title } from '@/components/atomic/';
 import styles from './FAQ.module.scss';
 
