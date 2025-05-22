@@ -11,6 +11,10 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@motionone/dom": "^10.18.0",
+    "framer-motion": "^12.12.1",
+    "motion": "^12.12.1",
+    "motion-plus": "^0.1.9",
     "next": "15.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

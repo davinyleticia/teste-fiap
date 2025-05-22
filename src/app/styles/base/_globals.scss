@@ -1,5 +1,5 @@
-@import '../base/variables';
-@import '../base/mixins';
+@use './variables' as vars;
+@use '../base/mixins' as *;
 
 // Definindo variáveis CSS
 :root {

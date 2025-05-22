@@ -1,9 +1,10 @@
-import Image from "next/image";
-
+import Header from "@/components/organisms/Header/Header";
 
 export default function Home() {
-  return (
-    // teste para verificar o progress bar
-<div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "900vh" }} />
+  return (<>
+  <Header />
+  <div style={{ height: "200vh"}} />
+    
+  </>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { NavView } from "../../molecules/";
+import { NavView } from "@/components/molecules/";
 
 export default function Nav() {
   const [scrollProgress, setScrollProgress] = useState(0);

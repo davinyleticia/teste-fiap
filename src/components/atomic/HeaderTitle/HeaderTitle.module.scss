@@ -1,0 +1,14 @@
+@use '../../../app/styles/base/variables.scss' as *;
+
+.title {
+  top: 0;
+  font-size: 6rem;
+
+  font-family: $font-stack;
+  font-weight: bold;
+
+  color: $text-color;
+  z-index: 2;
+  position: relative;
+}
+
