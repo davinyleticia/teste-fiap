@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import data from "../../../data/header.data.json";
 import Header from './Header';
 
 beforeAll(() => {
@@ -11,7 +12,7 @@ beforeAll(() => {
 });
 
 test('Header renders HeaderTitle and BackgroundTitle components', () => {
-  render(<Header />);
+  render(<Header data={data}/>);
 
   expect(screen.getByText(/SOBRE/i)).toBeInTheDocument();
   expect(screen.getByText(/A Melhor Faculdade/i)).toBeInTheDocument();
