@@ -2,10 +2,11 @@
 
 import { animate } from 'motion';
 import { useEffect, useRef } from 'react';
-import { TitleBlock } from "@/components/molecules/";
+import { TitleBlock } from '@/components/molecules/';
+import { HeaderTitle, BackgroundTitle } from '@/components/atomic';
 
 export default function Header() {
-const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const firstLineRef = useRef<HTMLDivElement>(null);
   const secondLineRef = useRef<HTMLDivElement>(null);
   const backgroundTitleRef = useRef<HTMLHeadingElement>(null); // ← tipagem opcional
@@ -55,7 +56,7 @@ const containerRef = useRef<HTMLDivElement>(null);
       animate(
         backgroundTitleRef.current,
         {
-          opacity: [0, 0.1, 0.1, 0] as any,
+          opacity: [0, 0.11, 0.11, 0] as any,
         },
         {
           duration: 7,
@@ -74,6 +75,19 @@ const containerRef = useRef<HTMLDivElement>(null);
     backgroundTitleRef,
     firstLineRef,
     secondLineRef,
-    };
+  };
 
-  return(<TitleBlock propsData={propsData} />)};
+  return (
+    <TitleBlock propsData={propsData}>
+      <BackgroundTitle>
+        <p ref={propsData.backgroundTitleRef}>&nbsp;&nbsp;&nbsp;SOBRE</p>
+      </BackgroundTitle>
+      <HeaderTitle>
+        <p ref={propsData.firstLineRef}>
+          &nbsp;&nbsp;&nbsp;A Melhor Faculdade
+        </p>
+        <p ref={propsData.secondLineRef}>de Tecnologia</p>
+      </HeaderTitle>
+    </TitleBlock>
+  );
+}
