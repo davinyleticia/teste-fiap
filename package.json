@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@motionone/dom": "^10.18.0",
+    "@netlify/plugin-nextjs": "^5.11.2",
     "framer-motion": "^12.12.1",
     "motion": "^12.12.1",
     "motion-plus": "^0.1.9",
