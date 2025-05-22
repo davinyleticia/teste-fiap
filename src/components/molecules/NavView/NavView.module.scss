@@ -30,7 +30,7 @@ position: fixed;
   }
 }
 
-@media (min-width: map-get($breakpoints, 'tablet')) {
+@media (min-width: map-get($breakpoints, 'hd-plus')) {
   .header {
     padding: $spacing-md 0;
 

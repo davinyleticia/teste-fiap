@@ -6,11 +6,11 @@ import { TitleBlock } from '@/components/molecules/';
 import { HeaderTitle, BackgroundTitle } from '@/components/atomic';
 
 interface HeaderProps {
-    data: {
-        titulo: string;
-        sub_titulo: string;
-        sobre: string;
-    };
+  data: {
+    titulo: string;
+    sub_titulo: string;
+    sobre: string;
+  };
 }
 
 export default function Header({ data }: HeaderProps) {
@@ -64,7 +64,7 @@ export default function Header({ data }: HeaderProps) {
       animate(
         backgroundTitleRef.current,
         {
-          opacity: [0, 0.11, 0.11, 0] as any,
+          opacity: [0, 0.17, 0.17, 0] as any,
         },
         {
           duration: 7,
@@ -86,16 +86,18 @@ export default function Header({ data }: HeaderProps) {
   };
 
   return (
-    <TitleBlock propsData={propsData}>
-      <BackgroundTitle>
-        <p ref={propsData.backgroundTitleRef}>&nbsp;&nbsp;&nbsp;{data?.sobre}</p>
-      </BackgroundTitle>
-      <HeaderTitle>
-        <p ref={propsData.firstLineRef}>
-          &nbsp;&nbsp;&nbsp;{data?.titulo}
-        </p>
-        <p ref={propsData.secondLineRef}>{data?.sub_titulo}</p>
-      </HeaderTitle>
-    </TitleBlock>
+    <section>
+      <TitleBlock propsData={propsData}>
+        <BackgroundTitle>
+          <p ref={propsData.backgroundTitleRef}>
+            &nbsp;&nbsp;&nbsp;{data?.sobre}
+          </p>
+        </BackgroundTitle>
+        <HeaderTitle>
+          <p ref={propsData.firstLineRef}>&nbsp;&nbsp;&nbsp;{data?.titulo}</p>
+          <p ref={propsData.secondLineRef}>{data?.sub_titulo}</p>
+        </HeaderTitle>
+      </TitleBlock>
+    </section>
   );
 }

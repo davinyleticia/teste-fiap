@@ -11,7 +11,7 @@
   z-index: 2;
   position: relative;
 
-@media (min-width: map-get($breakpoints, 'tablet')) {
+@media (min-width: map-get($breakpoints, 'hd-plus')) {
       font-size: 6rem;
   }
 }
