@@ -28,12 +28,11 @@ test('TitleBlock renders HeaderTitle and BackgroundTitle components', () => {
     </TitleBlock>
   );
 
-  // Verifica se os textos estão no documento
+
   expect(screen.getByText(/SOBRE/i)).toBeInTheDocument();
   expect(screen.getByText(/A Melhor Faculdade/i)).toBeInTheDocument();
   expect(screen.getByText(/de Tecnologia/i)).toBeInTheDocument();
 
-  // Verifica se as refs não são nulas (não usa toBeInTheDocument aqui)
   expect(containerRef.current).not.toBeNull();
   expect(backgroundTitleRef.current).not.toBeNull();
   expect(firstLineRef.current).not.toBeNull();

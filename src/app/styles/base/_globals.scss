@@ -21,7 +21,7 @@
 }
 
 
-// Definindo variáveis CSS
+// variáveis CSS
 :root {
   --primary-color: #ed145b;
   --background-color: #000000;
@@ -29,7 +29,7 @@
   --font-stack: 'Gotham', sans-serif;
 }
 
-// Reset básico e tipografia
+// Reset
 * {
   @include reset-box;
 }

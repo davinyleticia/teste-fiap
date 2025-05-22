@@ -17,7 +17,7 @@ export default function Header({ data }: HeaderProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const firstLineRef = useRef<HTMLDivElement>(null);
   const secondLineRef = useRef<HTMLDivElement>(null);
-  const backgroundTitleRef = useRef<HTMLHeadingElement>(null); // ← tipagem opcional
+  const backgroundTitleRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     document.fonts.ready.then(() => {
