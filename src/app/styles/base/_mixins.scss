@@ -1,25 +1,13 @@
-@use 'sass:map' as *;
+@use 'sass:map';
+@use './variables' as *;
 
 @mixin theme-vars($bg, $fg) {
   --background-color: #{$bg};
   --foreground: #{$fg};
 }
 
-
 @mixin reset-box {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
-
-
-@mixin respond-to($breakpoint) {
-  $value: map.get($breakpoints, $breakpoint);
-  @if $value {
-    @media (max-width: $value) {
-      @content;
-    }
-  } @else {
-    @warn "Breakpoint `#{$breakpoint}` não encontrado!";
-  }
 }

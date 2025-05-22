@@ -3,7 +3,12 @@
 .container {
   background-color: $background-color;
   padding: $spacing-lg;
-  width: 82rem;
+  width: 28rem;
   margin: 0 auto;
-  padding: 2vh 0;
+  padding: 14vh 0;
+
+  @media (min-width: map-get($breakpoints, 'tablet')) {
+    width: 80rem;
+    padding: 2vh 0;
+  }
 }
