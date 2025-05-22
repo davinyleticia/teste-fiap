@@ -1,7 +1,6 @@
 import { MarqueeText } from "@/components/atomic"
 import { ImageWithScrollText } from "@/components/molecules/";
 
-
 interface IntroProps {
     data: {
         scrollText: {

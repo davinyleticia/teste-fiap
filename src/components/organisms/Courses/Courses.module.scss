@@ -3,14 +3,14 @@
 .content {
   margin: 0 auto;
   display: none;
-  @media (min-width: 1024px) {
+  @media (min-width: 1704px) {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: $spacing-lg;
     background: $background-color;
-    width: 80%;
+    width: 110em;
   }
 }
 
@@ -38,24 +38,37 @@
   position: relative;
   transition: all 0.3s ease;
 
-   &.active {
-    color: $text-color;
 
-    // Borda no topo, apenas do tamanho do texto
+
     &::before {
       content: '';
       position: absolute;
       top: 0;
-      left: 30%;
-      transform: translateX(-50%);
-      width: 40%;
+      left: 11%;
+      transform: translateX(0);
+      width: 0;
       height: 3px;
-      background-color: $primary-color;
+      background-color: transparent;
       border-radius: 2px;
+        
+    border-radius: 2px;
+    transition: width 0.3s ease, background-color 0.3s ease;
     }
+  &.active::before {
+    width: 40%;
+    background-color: $primary-color;
+  }
+
+  &:hover::before {
+    width: 40%;
+    background-color: $primary-color;
   }
 
   &:hover {
+    color: lighten($text-color, 10%);
+  }
+
+ &:hover {
     color: lighten($text-color, 10%);
   }
 }
@@ -63,15 +76,16 @@
 .navButton p {
   font-size: 1.1rem;
   font-weight: 300;
-  padding: .6rem 0;
+  padding: 0.6rem 0;
 }
 
 .courseList {
   display: flex;
   flex-direction: column;
-  color: $text-color;
+  color: $text-color-secondary;
   width: 50%;
   gap: $spacing-sm;
+  height: 24rem;
 }
 
 .name {

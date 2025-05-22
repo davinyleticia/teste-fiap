@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import ImageWithScrollText from "./ImageWithScrollText";
 
-// Mock do componente ParallaxText
+// Mock
 jest.mock('@/components/atomic/', () => ({
   ParallaxText: ({ text }: any) => (
     <div data-testid="parallax-text">
