@@ -4,9 +4,9 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  padding: $spacing-lg;
+  padding: $spacing-lg $spacing-lg;
   background: $background-color;
-  width: 110em;
+  width: 110rem;
 }
 
 .section {
