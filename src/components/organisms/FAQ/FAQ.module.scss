@@ -93,7 +93,7 @@
 
   &.active::before,
   &:hover::before {
-    width: 38rem;
+    width: 25rem;
     background-color: $primary-color;
   }
 
@@ -124,5 +124,5 @@
   width: 100%;
   transform: translateY(-10px);
   transition: all 0.9s ease;
-  width: 90%;
+  width: 60%;
 }
