@@ -52,6 +52,47 @@ body {
 }
 
 
+::selection {
+  background: $primary-color; 
+  color: #fff; 
+}
+
+
+::-moz-selection {
+  background: $primary-color;
+  color: #fff;
+}
+
+
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $primary-color;
+   opacity: 0.1;
+
+}
+
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(0, 0%, 1%); 
+  border-radius: 10px;
+  border: 2px solid hsla(0, 77%, 44%, 0.812)
+
+   
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(0, 0%, 1%); 
+  opacity: 0.4;
+
+}
+
+
 
 a {
   color: inherit;
