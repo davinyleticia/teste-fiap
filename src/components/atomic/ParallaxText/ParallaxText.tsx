@@ -14,8 +14,8 @@ type Props = {
 export default function ParallaxText({ text }: Props) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll();
-  const x1 = useTransform(scrollYProgress, [0, 1], [0, -800]);
-  const x2 = useTransform(scrollYProgress, [0, 1], [0, 800]);
+  const x1 = useTransform(scrollYProgress, [0, 1], [0, -1800]);
+  const x2 = useTransform(scrollYProgress, [0, 1], [0, 1800]);
 
   useEffect(() => {
     return scrollYProgress.onChange((latest) => {
@@ -33,7 +33,7 @@ export default function ParallaxText({ text }: Props) {
 
       <motion.div className={styles.trackReverse} style={{ x: x2 }}>
         <span>
-          {text.text2} &nbsp; {text.text2} 
+          {text.text2} &nbsp; {text.text2}
         </span>
       </motion.div>
     </div>

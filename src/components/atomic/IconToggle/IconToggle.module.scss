@@ -1,10 +1,17 @@
+@use '../../../app/styles/base/variables.scss' as *;
+
 .iconToggle {
-  background: #e6007e;
-  color: white;
+  background: $primary-color;
+  color: $background-color;
   border-radius: 50%;
   border: none;
   width: 32px;
   height: 32px;
   font-size: 20px;
   font-weight: bold;
-}
+&.open {
+    background: transparent;
+    border: $primary-color 1px solid;
+    -webkit-text-stroke: 1px $primary-color;;
+  }}
+
