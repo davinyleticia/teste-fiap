@@ -65,7 +65,7 @@
 
 .tabButton {
   font-family: $font-stack;
-    font-size: $font-size-xl !important;
+    font-size: $font-size-sm !important;
   background: none;
   border: none;
   text-align: start;
@@ -119,7 +119,7 @@
 
 .answer {
   color: $text-color-secondary;
-    font-size: $font-size-xl;
+    font-size: $font-size-sm;
   padding: 1rem 0;
   width: 100%;
   transform: translateY(-10px);
