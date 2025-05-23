@@ -1,53 +1,72 @@
+import React from "react";
 import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
 import Intro from "./Intro";
 
-export interface IntroProps {
-        scrollText: {
-            text: string;
-            text2: string;
-        }
-        img: string;
-        MarqueeText: {
-            text: string;
-            text2: string;
-        };
+interface TextProps {
+  text: {
+    text: string;
+    text2: string;
+  };
 }
 
-// Mock
-jest.mock("@/components/atomic", () => ({
-  MarqueeText: ({ text }: any) => <div data-testid="marquee">{text.text} {text.text2}</div>,
-}));
+interface ImageWithScrollTextProps {
+  src: string;
+  alt: string;
+  scrollText: {
+    text: string;
+    text2: string;
+  };
+}
 
-jest.mock("@/components/molecules/", () => ({
-  ImageWithScrollText: ({ src, scrollText, alt }: any) => (
-    <div data-testid="image-scroll-text">
-      <img src={src} alt={alt} />
-      <span>{scrollText.text}</span>
-      <span>{scrollText.text2}</span>
+
+jest.mock("@/components/atomic", () => ({
+  __esModule: true,
+  MarqueeText: ({ text }: TextProps) => (
+    <div data-testid="marquee-text">
+      {text.text} {text.text2}
     </div>
   ),
 }));
 
-describe("Intro Component", () => {
-  const mockData : IntroProps = {
+jest.mock("@/components/molecules/", () => ({
+  __esModule: true,
+  ImageWithScrollText: ({ src, alt, scrollText }: ImageWithScrollTextProps) => (
+    <div data-testid="image-scroll-text">
+      <img src={src} alt={alt} />
+      <p>{scrollText.text}</p>
+      <p>{scrollText.text2}</p>
+    </div>
+  ),
+}));
+
+describe("Intro component", () => {
+  const mockData = {
     scrollText: {
-      text: "Scroll text 1",
-      text2: "Scroll text 2",
+      text: "Scroll 1",
+      text2: "Scroll 2",
     },
-    img: "example.jpg",
+    img: "/img.jpg",
     MarqueeText: {
       text: "Marquee 1",
       text2: "Marquee 2",
     },
   };
 
-  it("Deve renderizar MarqueeText e ImageWithScrollText com dados corretos", () => {
+  it("renderiza os componentes MarqueeText e ImageWithScrollText com os dados corretos", () => {
     render(<Intro data={mockData} />);
 
-    expect(screen.getByTestId("marquee")).toHaveTextContent("Marquee 1 Marquee 2");
+    const marquee = screen.getByTestId("marquee-text");
+    expect(marquee).toHaveTextContent("Marquee 1");
+    expect(marquee).toHaveTextContent("Marquee 2");
 
-    expect(screen.getByTestId("image-scroll-text")).toHaveTextContent("Scroll text 1");
-    expect(screen.getByTestId("image-scroll-text")).toHaveTextContent("Scroll text 2");
-    expect(screen.getByAltText("Imagem de exemplo")).toHaveAttribute("src", "example.jpg");
+    const imageScroll = screen.getByTestId("image-scroll-text");
+    expect(imageScroll).toBeInTheDocument();
+
+    const image = screen.getByAltText("Imagem de exemplo");
+    expect(image).toHaveAttribute("src", "/img.jpg");
+
+    expect(screen.getByText("Scroll 1")).toBeInTheDocument();
+    expect(screen.getByText("Scroll 2")).toBeInTheDocument();
   });
 });

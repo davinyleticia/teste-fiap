@@ -1,79 +1,75 @@
-import { render, screen, fireEvent } from '@testing-library/react';
-import Courses from './Courses';
-
-interface course {
-  name: string;
-  tag: string;
-}
-
-interface category {
-  tecnologia: course[];
-  inovacao: course[];
-  negocios: course[];
-}
+import React from "react";
+import { render, screen, fireEvent } from "@testing-library/react";
+import Courses from "./Courses";
 
 
-
-// Mock 
-jest.mock('@/components/atomic/', () => ({
-  Title: ({ text }: any) => (
-    <h1 data-testid="title">{text.mainTitle} - {text.subTitle}</h1>
+jest.mock("@/components/molecules/", () => ({
+  __esModule: true,
+  CourseItem: ({ name, tag }: { name: string; tag: string }) => (
+    <div data-testid="course-item">
+      <span>{name}</span> - <span>{tag}</span>
+    </div>
   ),
 }));
 
-// Mock
-jest.mock('@/components/molecules/', () => ({
-  CourseItem: ({ name, tag }: any) => (
-    <div data-testid="course-item">{name} [{tag}]</div>
+
+jest.mock("@/components/atomic/", () => ({
+  __esModule: true,
+  Title: ({ text }: { text: { mainTitle: string; subTitle: string } }) => (
+    <div data-testid="title">
+      <h1>{text.mainTitle}</h1>
+      <h2>{text.subTitle}</h2>
+    </div>
   ),
 }));
 
-describe('Courses', () => {
-  const mockData : category = {
+describe("Courses Component", () => {
+  const mockData = {
     tecnologia: [
-      { name: 'Curso Tech 1', tag: 'tag1' },
-      { name: 'Curso Tech 2', tag: 'tag2' },
+      { name: "Curso React", tag: "Frontend" },
+      { name: "Curso Node.js", tag: "Backend" },
     ],
     inovacao: [
-      { name: 'Curso Inovação 1', tag: 'tag3' }
+      { name: "Design Thinking", tag: "Criatividade" },
     ],
     negocios: [
-      { name: 'Curso Negócios 1', tag: 'tag4' }
-    ]
+      { name: "Gestão de Projetos", tag: "PM" },
+    ],
   };
 
-  it('deve renderizar título e cursos da aba tecnologia por padrão', () => {
+  it("renderiza título e subtítulo corretamente", () => {
     render(<Courses data={mockData} />);
 
-
-    expect(screen.getByTestId('title')).toHaveTextContent('Cursos - Cursos de Curta Duração');
-
-
-    const courses = screen.getAllByTestId('course-item');
-    expect(courses).toHaveLength(2);
-    expect(courses[0]).toHaveTextContent('Curso Tech 1');
-    expect(courses[1]).toHaveTextContent('Curso Tech 2');
+    expect(screen.getByText("Cursos")).toBeInTheDocument();
+    expect(screen.getByText("Cursos de Curta Duração")).toBeInTheDocument();
   });
 
-  it('deve trocar para aba inovação ao passar o mouse', () => {
+  it("renderiza abas e cursos da aba ativa (tecnologia por padrão)", () => {
     render(<Courses data={mockData} />);
 
-    const inovacaoButton = screen.getByText('INOVACAO');
-    fireEvent.mouseEnter(inovacaoButton);
+    expect(screen.getByText("TECNOLOGIA")).toBeInTheDocument();
+    expect(screen.getByText("INOVACAO")).toBeInTheDocument();
+    expect(screen.getByText("NEGOCIOS")).toBeInTheDocument();
 
-    const courses = screen.getAllByTestId('course-item');
-    expect(courses).toHaveLength(1);
-    expect(courses[0]).toHaveTextContent('Curso Inovação 1');
+    expect(screen.getByText("Curso React")).toBeInTheDocument();
+    expect(screen.getByText("Curso Node.js")).toBeInTheDocument();
   });
 
-  it('deve trocar para aba negócios ao passar o mouse', () => {
+  it("muda para aba de inovação ao passar o mouse", () => {
     render(<Courses data={mockData} />);
 
-    const negociosButton = screen.getByText('NEGOCIOS');
-    fireEvent.mouseEnter(negociosButton);
+    fireEvent.mouseEnter(screen.getByText("INOVACAO"));
 
-    const courses = screen.getAllByTestId('course-item');
-    expect(courses).toHaveLength(1);
-    expect(courses[0]).toHaveTextContent('Curso Negócios 1');
+    expect(screen.getByText("Design Thinking")).toBeInTheDocument();
+    expect(screen.queryByText("Curso React")).not.toBeInTheDocument();
+  });
+
+  it("muda para aba de negócios ao passar o mouse", () => {
+    render(<Courses data={mockData} />);
+
+    fireEvent.mouseEnter(screen.getByText("NEGOCIOS"));
+
+    expect(screen.getByText("Gestão de Projetos")).toBeInTheDocument();
+    expect(screen.queryByText("Curso React")).not.toBeInTheDocument();
   });
 });

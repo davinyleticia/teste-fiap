@@ -1,21 +1,17 @@
+import React, { HTMLAttributes } from 'react';
 import { render, screen } from '@testing-library/react';
 import MarqueeText from './MarqueeText';
 
 type Props = {
-    text: string;
-    text2: string;
+  text: string;
+  text2: string;
 };
 
-
-// Mock 
-jest.mock('framer-motion', () => {
-  const React = require('react');
-  return {
-    motion: {
-      div: ({ children, ...rest }: any) => <div {...rest}>{children}</div>,
-    }
-  };
-});
+jest.mock('framer-motion', () => ({
+  motion: {
+    div: ({ children, ...rest }: HTMLAttributes<HTMLDivElement>) => <div {...rest}>{children}</div>,
+  }
+}));
 
 describe("MarqueeText", () => {
   const mockText : Props = {
