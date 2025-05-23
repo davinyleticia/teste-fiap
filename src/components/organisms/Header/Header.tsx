@@ -14,8 +14,6 @@ interface HeaderProps {
   };
 }
 
-
-
 export default function Header({ data }: HeaderProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const firstLineRef = useRef<HTMLDivElement>(null);
@@ -23,6 +21,8 @@ export default function Header({ data }: HeaderProps) {
   const backgroundTitleRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
+ 
+
     document.fonts.ready.then(() => {
       if (
         !firstLineRef.current ||
@@ -51,8 +51,8 @@ export default function Header({ data }: HeaderProps) {
       animate(
         secondLineRef.current,
         {
-          opacity: [0, 1, 1, 0] ,
-          y: [-50, 0, 0, 50] ,
+          opacity: [0, 1, 1, 0],
+          y: [-50, 0, 0, 50],
         } as DOMKeyframesDefinition,
         {
           duration: 7,
@@ -68,7 +68,7 @@ export default function Header({ data }: HeaderProps) {
         backgroundTitleRef.current,
         {
           opacity: [0, 0.17, 0.17, 0],
-          y: [-50, 0, 0, 50] ,
+          y: [-50, 0, 0, 50],
         } as DOMKeyframesDefinition,
         {
           duration: 7,
@@ -77,7 +77,7 @@ export default function Header({ data }: HeaderProps) {
           offset: [0, 0.2, 0.8, 1],
           repeat: Infinity,
           repeatDelay: 3,
-        } as  AnimationOptions
+        } as AnimationOptions
       );
     });
   }, []);
@@ -88,7 +88,6 @@ export default function Header({ data }: HeaderProps) {
     firstLineRef,
     secondLineRef,
   };
-
 
   return (
     <section className={styles.container}>

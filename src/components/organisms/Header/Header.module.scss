@@ -2,6 +2,7 @@
 
 .container {
     height: 28vh;
+    visibility: hidden;
   @media (min-width: map-get($breakpoints, 'hd-plus')) {
   height: 100vh;
   }
