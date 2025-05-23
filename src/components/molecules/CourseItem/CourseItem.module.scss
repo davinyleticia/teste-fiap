@@ -2,6 +2,7 @@
 
 .courseItem {
   display: flex;
+  flex-direction: column-reverse;
   justify-content: space-between;
   padding: $spacing-sm 0;
   border-bottom: 1px solid $gray-300;
@@ -9,5 +10,14 @@
   font-size: $font-size-sm;
   @media (min-width: map-get($breakpoints, 'hd')) {
     font-size: $font-size-lg !important;
+    flex-direction: row;
+  }
+}
+
+.courseItem p {
+  color: $text-color;
+  padding: .7rem 0;
+  @media (min-width: map-get($breakpoints, 'hd')) {
+    color: $text-color-secondary;
   }
 }
