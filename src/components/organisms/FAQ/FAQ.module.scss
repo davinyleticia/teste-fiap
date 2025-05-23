@@ -94,7 +94,7 @@
 
   &.active::before,
   &:hover::before {
-    width: 26rem;
+    width: 100%;
     background-color: $primary-color;
   }
 
@@ -122,11 +122,14 @@
   color: $text-color-secondary;
   font-size: $font-size-sm;
   padding: 1rem 0;
-  width: 90%;
+  width: 91%;
   transform: translateY(-10px);
   transition: all 0.9s ease;
   @media (min-width: map-get($breakpoints, 'hd')) {
     font-size: $font-size-xl;
-    width: 100%;
+    width: 91%;
+  }
+  @media (min-width: map-get($breakpoints, 'hd-plus')) {
+    width: 99%;
   }
 }
