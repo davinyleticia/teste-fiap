@@ -24,7 +24,7 @@
   flex-direction: column;
   gap: 2rem;
   background-color: #000;
-  width: 100%;
+  width: 40%;
 
   @media (min-width: map-get($breakpoints, 'hd')) {
     display: grid;
@@ -52,8 +52,9 @@
   align-items: flex-start;
   transition: all 0.3s ease;
 
+
   @media (min-width: map-get($breakpoints, 'hd')) {
-    height: 15rem;
+    height: 25rem;
   }
 
   &:hover .answer {
@@ -64,6 +65,7 @@
 
 .tabButton {
   font-family: $font-stack;
+    font-size: $font-size-xl !important;
   background: none;
   border: none;
   text-align: start;
@@ -117,10 +119,10 @@
 
 .answer {
   color: $text-color-secondary;
-  font-size: 1.5rem;
+    font-size: $font-size-xl;
   padding: 1rem 0;
   width: 100%;
   transform: translateY(-10px);
   transition: all 0.9s ease;
-  width: 24rem;
+  width: 90%;
 }

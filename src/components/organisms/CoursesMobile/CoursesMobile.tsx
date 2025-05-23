@@ -5,18 +5,19 @@ import { CategoryHeader, CourseItem } from '@/components/molecules/';
 import { Title } from '@/components/atomic/';
 import styles from './CoursesMobile.module.scss';
 
-interface Course {
-  title: string;
-  type: string;
+interface course {
+  name: string;
+  tag: string;
 }
 
-interface Category {
-  tecnologia: Course[];
-  inovacao: Course[];
-  negocios: Course[];
+interface category {
+  tecnologia: course[];
+  inovacao: course[];
+  negocios: course[];
 }
 
-export default function CoursesMobile({ data }: { data: Category }) {
+
+export default function CoursesMobile({ data }: { data: category }) {
   const [openTabs, setOpenTabs] = useState<Record<string, boolean>>({});
 
   const handleToggle = (tab: string) => {
@@ -50,8 +51,8 @@ export default function CoursesMobile({ data }: { data: Category }) {
                     {data[tab].map((course, index) => (
                       <CourseItem
                         key={index}
-                        name={course.title}
-                        tag={course.type}
+                        name={course.name}
+                        tag={course.tag}
                       />
                     ))}
                   </div>
