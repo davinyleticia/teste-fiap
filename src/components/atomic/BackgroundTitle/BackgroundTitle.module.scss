@@ -1,11 +1,11 @@
 @use '../../../app/styles/base/variables.scss' as *;
 
 .backgroundTitle {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 900;
   color: $text-color;
   position: relative;
-  top: 6rem;
+  top: 5rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;

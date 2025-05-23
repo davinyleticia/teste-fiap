@@ -13,7 +13,7 @@ export default function Home() {
       <CoursesMobile data={dataCourses}/>
       <FAQ data={dataFAQ}/>
       <FAQMobile data={dataFAQ}/>
-      <div style={{ height: '10rem' }}></div>
+      <div style={{ height: '4rem' }}></div>
     </>
   );
 }
