@@ -3,7 +3,7 @@ import styles from './CategoryHeader.module.scss';
 
 export type CategoryHeaderProps = {
   title: string;
-  isOpen: boolean;
+  isOpen: () => boolean;
   onToggle: () => void;
 };
 
@@ -15,7 +15,7 @@ export default function CategoryHeader({
   return (
     <div className={styles.header} onClick={onToggle}>
       <h2 className={styles.title}>{title}</h2>
-      <IconToggle isOpen={isOpen} />
+      <IconToggle isOpen={isOpen() } />
     </div>
   );
 }
