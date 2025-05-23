@@ -63,12 +63,6 @@ npm run dev
 
 ---
 
-## Deploy (Netlify)
-
-O projeto já contém um arquivo de configuração para **deploy no Netlify**.
-
----
-
 ## Licença
 
 Licenciado sob a **GNU GPL v3**.
