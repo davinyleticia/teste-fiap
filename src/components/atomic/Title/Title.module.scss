@@ -2,12 +2,13 @@
 
 .container {
   font-family: $font-stack;
-  font-size: $font-size-lg;
+
   color: $text-color;
 }
 
 .mainTitle {
   font-size: 6rem;
+  font-size: $font-size-xxl !important;
   font-weight: 200;
   margin: 0;
 }
