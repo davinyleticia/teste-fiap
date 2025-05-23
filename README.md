@@ -24,7 +24,7 @@ Os conteúdos utilizados foram organizados em arquivos `.json` dentro da pasta `
 
 página 404, e custom da barra de rolagem e select dos texto.
 
-Bônus: ultilizei o motion e criei varios frame usando a técnica `frame-by-frame` assim foi montando a imagem deacordo com scroll.
+Bônus: ultilizei o motion e criei varios frame usando a técnica `frame-by-frame` assim foi montando a imagem de acordo com scroll.
 
 
 ---
