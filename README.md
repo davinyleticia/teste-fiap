@@ -30,7 +30,12 @@ Bônus: ultilizei o motion e criei varios frame usando a técnica `frame-by-fram
 
 # Videos
 
+- Mobile:
+
 https://www.youtube.com/watch?v=ZN9ss_ved0M
+
+- Desktop:
+
 https://www.youtube.com/watch?v=iGXpxA4Msyk
 
 
