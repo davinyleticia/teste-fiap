@@ -1,7 +1,3 @@
-Claro! Aqui está uma versão revisada do seu texto com correções gramaticais, ortográficas e de estilo, mantendo o tom técnico e direto:
-
----
-
 # Teste Técnico Front-end – FIAP
 
 ## Desafio
