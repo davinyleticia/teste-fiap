@@ -67,7 +67,3 @@ O projeto já contém um arquivo de configuração para **deploy no Netlify**.
 ## Licença
 
 Licenciado sob a **GNU GPL v3**.
-
----
-
-Se quiser, posso montar isso como um `README.md` estilizado também. Deseja?
