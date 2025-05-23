@@ -6,7 +6,6 @@ import styles from './ParallaxText.module.scss';
 import Image from 'next/image';
 
 
-
 export default function Water() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll();

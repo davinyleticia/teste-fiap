@@ -1,15 +1,14 @@
 @use '../../../app/styles/base/variables.scss' as *;
 
 .content {
-  display: none;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-lg $spacing-lg;
+  background: $background-color;
+  width: 100%;
   @media (min-width: map-get($breakpoints, 'hd')) {
-   display: flex;
-    width: 113rem;
-    margin: 0 auto; 
-    flex-direction: column;
-    padding: $spacing-lg $spacing-lg;
-    background: $background-color;
-
+    display: none;
   }
 }
 
@@ -20,6 +19,7 @@
   background: #000;
   color: #fff;
   padding: 2rem 0;
+  width: 100%;
 }
 
 .tabs {
@@ -27,37 +27,16 @@
   flex-direction: column;
   gap: 2rem;
   background-color: #000;
-
-  @media (min-width: map-get($breakpoints, 'hd')) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-    width: 80%;
-    padding: 2rem 0;
-  }
-
-  @media (min-width: map-get($breakpoints, 'hd-plus')) {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    flex-wrap: wrap;
-    gap: 2rem;
-    width: 100%;
-    padding: 2rem 0;
-  }
+  margin-top: 4rem;
 }
 
 .tabWrapper {
   display: flex;
   flex-direction: column;
-  padding: 3rem 0;
+  margin: 1rem 0;
   align-items: flex-start;
   transition: all 0.3s ease;
-  height: 9rem;
-
-  @media (min-width: map-get($breakpoints, 'hd')) {
-    height: 18rem;
-  }
+  height: 100%;
 
   &:hover .answer {
     opacity: 1;
@@ -74,16 +53,17 @@
   color: $text-color;
   font-size: 1.2rem;
   cursor: pointer;
-  position: relative;
+  position: absolute;
   transition: all 0.3s ease;
   padding: 0;
+  width: 100%;
 
   &::before {
     content: '';
     position: absolute;
     top: -9px;
     left: 0;
-    width: 50%;
+    width: 2rem;
     height: 3px;
     background-color: lighten($text-color-secondary, 30%);
     border-radius: 2px;
@@ -94,27 +74,12 @@
 
   &.active::before,
   &:hover::before {
-    width: 100%;
+    width: 90%;
     background-color: $primary-color;
   }
 
   &:hover {
     color: lighten($text-color, 10%);
-  }
-
-  @media (min-width: map-get($breakpoints, 'hd')) {
-    font-size: $font-size-lg !important;
-    &.active::before,
-    &:hover::before {
-      width: 32rem;
-    }
-  }
-
-  @media (min-width: map-get($breakpoints, 'hd-plus')) {
-    &.active::before,
-    &:hover::before {
-      width: 33rem;
-    }
   }
 }
 
@@ -122,14 +87,7 @@
   color: $text-color-secondary;
   font-size: $font-size-sm;
   padding: 1rem 0;
-  width: 91%;
+  width: 100%;
   transform: translateY(-10px);
   transition: all 0.9s ease;
-  @media (min-width: map-get($breakpoints, 'hd')) {
-    font-size: $font-size-xl;
-    width: 91%;
-  }
-  @media (min-width: map-get($breakpoints, 'hd-plus')) {
-    width: 99%;
-  }
 }

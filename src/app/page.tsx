@@ -1,4 +1,4 @@
-import { Courses, Header, Intro, FAQ, CoursesMobile } from '@/components/organisms/';
+import { Courses, Header, Intro, FAQ, CoursesMobile, FAQMobile } from '@/components/organisms/';
 import dataHeader from '../data/header.data.json';
 import dataIntro from '../data/intro.data.json';
 import dataCourses from '../data/courses.data.json';
@@ -12,6 +12,7 @@ export default function Home() {
       <Courses data={dataCourses}/>
       <CoursesMobile data={dataCourses}/>
       <FAQ data={dataFAQ}/>
+      <FAQMobile data={dataFAQ}/>
       <div style={{ height: '10rem' }}></div>
     </>
   );
