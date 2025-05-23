@@ -26,8 +26,13 @@ página 404, e custom da barra de rolagem e select dos texto.
 
 Bônus: ultilizei o motion e criei varios frame usando a técnica `frame-by-frame` assim foi montando a imagem de acordo com scroll.
 
-
 ---
+
+# Videos
+
+https://www.youtube.com/watch?v=ZN9ss_ved0M
+https://www.youtube.com/watch?v=iGXpxA4Msyk
+
 
 ## Especificação Técnica
 
