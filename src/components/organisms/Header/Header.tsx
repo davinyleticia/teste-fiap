@@ -1,6 +1,6 @@
 'use client';
 
-import { animate } from 'motion';
+import { animate, DOMKeyframesDefinition, AnimationOptions } from 'motion';
 import { useEffect, useRef } from 'react';
 import { TitleBlock } from '@/components/molecules/';
 import { HeaderTitle, BackgroundTitle } from '@/components/atomic';
@@ -13,6 +13,8 @@ interface HeaderProps {
     sobre: string;
   };
 }
+
+
 
 export default function Header({ data }: HeaderProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -36,14 +38,14 @@ export default function Header({ data }: HeaderProps) {
         {
           opacity: [0, 1, 1, 0],
           y: [-50, 0, 0, 50],
-        },
+        } as DOMKeyframesDefinition,
         {
           duration: 7,
           easing: 'ease-in-out',
           offset: [0, 0.2, 0.8, 1],
           repeat: Infinity,
           repeatDelay: 3,
-        }
+        } as AnimationOptions
       );
 
       animate(
@@ -51,7 +53,7 @@ export default function Header({ data }: HeaderProps) {
         {
           opacity: [0, 1, 1, 0] ,
           y: [-50, 0, 0, 50] ,
-        },
+        } as DOMKeyframesDefinition,
         {
           duration: 7,
           delay: 0.5,
@@ -59,14 +61,15 @@ export default function Header({ data }: HeaderProps) {
           offset: [0, 0.2, 0.8, 1],
           repeat: Infinity,
           repeatDelay: 3,
-        }
+        } as AnimationOptions
       );
 
       animate(
         backgroundTitleRef.current,
         {
           opacity: [0, 0.17, 0.17, 0],
-        },
+          y: [-50, 0, 0, 50] ,
+        } as DOMKeyframesDefinition,
         {
           duration: 7,
           delay: 0.2,
@@ -74,7 +77,7 @@ export default function Header({ data }: HeaderProps) {
           offset: [0, 0.2, 0.8, 1],
           repeat: Infinity,
           repeatDelay: 3,
-        }
+        } as  AnimationOptions
       );
     });
   }, []);
