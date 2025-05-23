@@ -18,13 +18,10 @@ interface category {
 
 
 export default function CoursesMobile({ data }: { data: category }) {
-  const [openTabs, setOpenTabs] = useState<Record<string, boolean>>({});
+  const [openTabs, setOpenTabs] = useState<string>();
 
   const handleToggle = (tab: string) => {
-    setOpenTabs((prev) => ({
-      ...prev,
-      [tab]: !prev[tab],
-    }));
+    setOpenTabs(tab);
   };
 
   return (
@@ -43,10 +40,10 @@ export default function CoursesMobile({ data }: { data: category }) {
               <div key={tab}>
                 <CategoryHeader
                   title={tab.toUpperCase()}
-                  isOpen={!!openTabs[tab]}
+                  isOpen={() => openTabs === tab ? true : false}
                   onToggle={() => handleToggle(tab)}
                 />
-                {openTabs[tab] && (
+                {openTabs === tab ? (
                   <div className={styles.list}>
                     {data[tab].map((course, index) => (
                       <CourseItem
@@ -56,7 +53,7 @@ export default function CoursesMobile({ data }: { data: category }) {
                       />
                     ))}
                   </div>
-                )}
+                ) : null}
               </div>
             ))}
           </div>

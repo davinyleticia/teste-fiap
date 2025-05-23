@@ -6,7 +6,10 @@
   flex-direction: column;
   padding: $spacing-lg $spacing-lg;
   background: $background-color;
-  width: 110rem;
+  width: 100%;
+  @media (min-width: map-get($breakpoints, 'hd')) {
+    width: 113rem;
+  }
 }
 
 .section {
@@ -16,7 +19,6 @@
   background: #000;
   color: #fff;
   padding: 2rem 0;
-  
 }
 
 .tabs {
@@ -24,7 +26,7 @@
   flex-direction: column;
   gap: 2rem;
   background-color: #000;
-  width: 40%;
+
 
   @media (min-width: map-get($breakpoints, 'hd')) {
     display: grid;
@@ -51,7 +53,7 @@
   padding: 3rem 0;
   align-items: flex-start;
   transition: all 0.3s ease;
-
+  height: 9rem;
 
   @media (min-width: map-get($breakpoints, 'hd')) {
     height: 25rem;
@@ -65,7 +67,7 @@
 
 .tabButton {
   font-family: $font-stack;
-    font-size: $font-size-sm !important;
+  font-size: $font-size-sm !important;
   background: none;
   border: none;
   text-align: start;
@@ -75,7 +77,6 @@
   position: relative;
   transition: all 0.3s ease;
   padding: 0;
-
 
   &::before {
     content: '';
@@ -93,23 +94,23 @@
 
   &.active::before,
   &:hover::before {
-    width: 25rem;
+    width: 26rem;
     background-color: $primary-color;
   }
-
 
   &:hover {
     color: lighten($text-color, 10%);
   }
 
   @media (min-width: map-get($breakpoints, 'hd')) {
+    font-size: $font-size-lg !important;
     &.active::before,
     &:hover::before {
-      width: 38rem;
+      width: 32rem;
     }
   }
 
-    @media (min-width: map-get($breakpoints, 'hd-plus')) {
+  @media (min-width: map-get($breakpoints, 'hd-plus')) {
     &.active::before,
     &:hover::before {
       width: 33rem;
@@ -119,10 +120,13 @@
 
 .answer {
   color: $text-color-secondary;
-    font-size: $font-size-sm;
+  font-size: $font-size-sm;
   padding: 1rem 0;
-  width: 100%;
+  width: 90%;
   transform: translateY(-10px);
   transition: all 0.9s ease;
-  width: 60%;
+  @media (min-width: map-get($breakpoints, 'hd')) {
+    font-size: $font-size-xl;
+    width: 100%;
+  }
 }

@@ -8,13 +8,20 @@
 
 .mainTitle {
   font-size: 6rem;
-  font-size: $font-size-xxl !important;
+  font-size: $font-size-xl !important;
   font-weight: 200;
   margin: 0;
+    @media (min-width: map-get($breakpoints, 'hd')) {
+        font-size: $font-size-xxxl !important;
+  }
 }
 
 .subTitle {
   color: $primary-color;
-  font-size: 1rem;
+  font-size: $font-size-xl !important;
   margin-top: 0.25rem;
+
+    @media (min-width: map-get($breakpoints, 'hd')) {
+      font-size: 1rem;
+  }
 }
