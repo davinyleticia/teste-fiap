@@ -6,6 +6,7 @@ import dataIntro from '../data/intro.data.json';
 import dataCourses from '../data/courses.data.json';
 import dataFAQ from '../data/faq.data.json';
 import { LoadingSpinner } from '@/components/molecules';
+import { Water } from '@/components/atomic';
 
 
 export default function Home() {
@@ -26,11 +27,11 @@ const [loading, setLoading] = useState(true);
     );
   }
 
-
   return (
     <>
       <Header data={dataHeader} />
       <Intro data={dataIntro} />
+      <Water/>
       <Courses data={dataCourses}/>
       <CoursesMobile data={dataCourses}/>
       <FAQ data={dataFAQ}/>

@@ -1,36 +1,42 @@
 'use client';
+import { useEffect, useState } from 'react';
+import { motion, useScroll } from 'framer-motion';
+import styles from './water.module.scss';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useEffect, useRef } from 'react';
-import styles from './ParallaxText.module.scss';
-import Image from 'next/image';
+const totalFrames = 191;
 
+function formatNumber(num: number, size: number) {
+  let s = num + '';
+  while (s.length < size) s = '0' + s;
+  return s;
+}
 
-export default function Water() {
-  const ref = useRef(null);
+export default function ScrollSpriteAnimation() {
   const { scrollYProgress } = useScroll();
-  const x = useTransform(scrollYProgress, [0, 1], [0, 1800]);
+  const [frame, setFrame] = useState(1);
 
   useEffect(() => {
-    return scrollYProgress.onChange((latest) => {
-      console.log('Scroll Y Progress:', latest);
+    return scrollYProgress.on('change', (latest) => {
+      const frameIndex = Math.min(
+        totalFrames,
+        Math.max(1, Math.floor(latest * totalFrames))
+      );
+      setFrame(frameIndex);
     });
   }, [scrollYProgress]);
 
-  return (
-    <div ref={ref} className={styles.wrapper}>
+  const currentImage = `/water/water_${formatNumber(frame, 3)}.jpg`;
 
-      <motion.div className={styles.track} style={{ x: x }}>
-   
-          <Image
-            src="/images/water_.png"
-            alt="Water"
-            className={styles.image}
-            width={30}
-            height={40}
-            />
-      
-      </motion.div>
+  return (
+    <div className={styles.container}>
+      <motion.img
+        src={currentImage}
+        alt={`Frame ${frame}`}
+        className={styles.spriteImage}
+        loading="eager"
+        draggable={false}
+        key={frame}
+      />
     </div>
   );
 }
