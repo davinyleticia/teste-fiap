@@ -44,7 +44,7 @@ algo usado muito na FIAP, mas isto não seria o problema nos projetos implementa
 
 # Commits
 
-segui o conversão adotada 
+segui a conversão adotada 
 
 https://www.conventionalcommits.org/pt-br/v1.0.0-beta.4/
 
