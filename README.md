@@ -24,6 +24,23 @@ Bônus: ultilizei o motion e criei varios frame usando a técnica `frame-by-fram
 
 ---
 
+# Melhorias
+
+Uma melhoria seria a implementação mais refinada das animações baseadas na rolagem. Segui o modelo de `parallax scroll` de forma funcional e com qualidade, o que desenvolvi atende bem ao propósito. Porém, por conta do tempo, deixei de lado algumas perfeições nesse requisito. Ainda assim, seria algo que evoluiria para dar uma sensação melhor no storytelling.
+
+usando `position: sticky`
+
+
+| Técnica                    | Descrição                                                                        |
+| -------------------------- | -------------------------------------------------------------------------------- |
+| `position: sticky`         | Mantém a imagem fixa no topo da viewport enquanto seu contêiner estiver visível. |
+| `height: 100vh`            | Garante que cada seção ocupe 100% da altura da tela, criando "páginas" visuais.  |
+| `z-index`                  | Controla a sobreposição entre a imagem de fundo e o conteúdo.                    |
+| `scrollY` + `Math.floor()` | Detecta a posição de scroll para decidir qual imagem ou conteúdo mostrar.        |
+| `transition`, `opacity`    | Suavizam a troca de imagens ou elementos visuais com animações.                  |
+
+
+
 # Videos
 
 - Mobile:
