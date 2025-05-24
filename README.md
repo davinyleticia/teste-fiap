@@ -40,6 +40,13 @@ usando `position: sticky`
 | `transition`, `opacity`    | Suavizam a troca de imagens ou elementos visuais com animações.                  |
 
 
+algo usado muito na FIAP, mas isto não seria o problema nos projetos implementar com qualidade por mim.
+
+# Commits
+
+segui o conversão adotada 
+
+https://www.conventionalcommits.org/pt-br/v1.0.0-beta.4/
 
 # Videos
 
